@@ -1,0 +1,6 @@
+defshell -bash 
+defscrollback 200000
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{.bW}%-w%{.rW}%f%n %t%{-}%+w %=%{..G}[%H %l]%{..Y} %M/%D %C "
+#    screen -fn -a  -t sb102 -l ssh sb102  
