@@ -92,6 +92,8 @@ set background=dark
 if has("autocmd")
 	  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+au BufWinLeave * mkview
+au BufWinEnter * silent loadview
 "For indents that consist of 4 space characters but are entered with the tab key:
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 nnoremap <F2> :set invpaste paste?<CR>
