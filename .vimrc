@@ -45,7 +45,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug '/scrooloose/syntastic'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-sensible'
-Plug 'vim-scripts/cscope.vim'
+"Plug 'vim-scripts/cscope.vim'
 " Add plugins to &runtimepath
 call plug#end()
 
