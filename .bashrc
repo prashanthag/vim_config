@@ -103,4 +103,11 @@ export NVM_DIR="$HOME/.nvm" && (
   git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
 ) && \. "$NVM_DIR/nvm.sh"
 ### end nvm
+#### virtualenvwrapper
+export PATH=~/.local/bin:$PATH
 
+# virtualenvwrapper settings
+export WORKON_HOME=~/.envs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source ~/.local/bin/virtualenvwrapper.sh
+###
