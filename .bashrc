@@ -81,33 +81,24 @@ function git_dirty {
 ps1_dir="$Purple\w$NONE"
 ps1_git="$Cyan \$(parse_git_branch)$Red \$(git_dirty)$NONE "
 
-export PS1="${ps1_dir}${ps1_git}\$ "
+#export PS1="${ps1_dir}${ps1_git}\$ "
 
 
-# ------------------------------------
-# MOTD (Message of the Day)
-# What you see when Terminal opens
-# ------------------------------------
 
-echo "----------------------------"
-echo "Loaded ~/.bashrc"
-echo ""
-echo "To edit run: bashedit"
-echo "To refresh run: bashrefresh"
-echo "All aliases: alias"
-echo "----------------------------"
-# nvm 
-export NVM_DIR="$HOME/.nvm" && (
-  git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR"
-  cd "$NVM_DIR"
-  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
-) && \. "$NVM_DIR/nvm.sh"
-### end nvm
-#### virtualenvwrapper
+export PATH=/usr/lib/postgresql/10/bin/:/home/ina/.local/bin/:$PATH
+export FLASK_ENV=development
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+# nvm for nodeJs
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# add pip-installes executables accessible
 export PATH=~/.local/bin:$PATH
 
 # virtualenvwrapper settings
 export WORKON_HOME=~/.envs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source ~/.local/bin/virtualenvwrapper.sh
-###
+
