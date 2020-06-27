@@ -1,0 +1,28 @@
+
+export PATH=/usr/lib/postgresql/10/bin/:/home/ina/.local/bin/:$PATH
+export FLASK_ENV=development
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+# nvm for nodeJs
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# add pip-installes executables accessible
+export PATH=~/.local/bin:$PATH
+
+# virtualenvwrapper settings
+export WORKON_HOME=~/.envs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source ~/.local/bin/virtualenvwrapper.sh
+
+
+export AUTOSSH_LOGFILE=autossh.log
+alias ssh='autossh -M 0 -o "ServerAliveInterval 10" -o "ServerAliveCountMax 3"'
+alias sshp='ssh -o ProxyCommand="ssh -q -W %h:%p jumper"'
+#alias scpp='ssh -o ProxyCommand="ssh -q -W %h:%p jumper"'
+alias scpp="rsync -azv -e 'ssh -o ProxyCommand=\"ssh -q -W %h:%p jumper\"'"
+alias scpp="rsync -azv -e 'ssh -J jumper'"
+alias vsh='vim ~/.bashrc'
+alias sink='source ~/.bashrc'
+
