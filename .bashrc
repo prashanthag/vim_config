@@ -103,12 +103,3 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source ~/.local/bin/virtualenvwrapper.sh
 
 
-export AUTOSSH_LOGFILE=autossh.log
-alias ssh='autossh -M 0 -o "ServerAliveInterval 10" -o "ServerAliveCountMax 3"'
-alias sshp='ssh -o ProxyCommand="ssh -q -W %h:%p jumper"'
-#alias scpp='ssh -o ProxyCommand="ssh -q -W %h:%p jumper"'
-alias scpp="rsync -azv -e 'ssh -o ProxyCommand=\"ssh -q -W %h:%p jumper\"'"
-alias scpp="rsync -azv -e 'ssh -J jumper'"
-alias vsh='vim ~/.bashrc'
-alias sink='source ~/.bashrc'
-
