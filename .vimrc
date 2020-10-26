@@ -12,7 +12,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-github-dashboard'
 
 " Group dependencies, vim-snippets depends on ultisnips
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+"Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -92,10 +92,10 @@ if has("autocmd")
 	  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+":wqau BufWinEnter * silent loadview
 "For indents that consist of 4 space characters but are entered with the tab key:
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
-
+inoremap jj <Esc>
